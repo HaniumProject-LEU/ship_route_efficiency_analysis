@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import DEAAnalyze from "./DEAAnalyze";
+import DataGenerate from "./DataGenerate";
+import Navigation from "./components/Navigation";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navigation/>
+    <div className={"mr-side mt-[50px]"}></div>
+      <Routes>
+        <Route path={"/"} element={<Home />}></Route>
+        <Route path={"/deaanalyze"} element={<DEAAnalyze />}></Route>
+        <Route path={"/datagenerate"} element={<DataGenerate />}></Route>
+      </Routes>
+    </>
   );
 }
-
-export default App;
