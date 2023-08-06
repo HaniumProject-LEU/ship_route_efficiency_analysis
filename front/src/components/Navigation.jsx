@@ -7,7 +7,7 @@ export default function Navigation() {
     <>
       <div
         className={
-          "w-full h-[50px] bg-white bg-opacity-90 top-0 fixed shadow-lg z-20 "
+          "w-full h-[60px] bg-white bg-opacity-90 top-0 fixed shadow-lg z-20 "
         }
         // style={containerStyle}
       >
@@ -15,13 +15,13 @@ export default function Navigation() {
           <NavLink
             to={"/"}
             className={
-              "ml-[72px] text-[24px] text-[#0A455E]  font-bold mt-[7px]"
+              "ml-[72px] text-[24px] text-[#0A455E]  font-bold mt-[12px]"
             }
           >
             LEU
           </NavLink>
           <div
-            className={"space-x-[80px] text-sm ml-[48px] text-gray2 mt-[16px]"}
+            className={"space-x-[80px] text-sm ml-[48px] text-gray2 mt-[20px]"}
           >
             <NavLink
               to={"/deaanalyze"}
