@@ -1,8 +1,8 @@
-var map = L.map('map').setView([36.5, 130], 5); // 초기 중심 좌표와 줌 레벨
+var map = L.map('map').setView([20, 15], 3); // 초기 중심 좌표와 줌 레벨
 
 //맵 지도 추가
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19
+L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+    maxZoom: 6
 }).addTo(map);
 
 //위도경도 표시 라이브러리 추가
@@ -10,6 +10,7 @@ L.latlngGraticule({
     showLabel: true,
     color: '#333'
 }).addTo(map);
+
 
 //fix값[좌표]
 var continents = {
@@ -51,28 +52,69 @@ var continents = {
             { name: "방콕", coordinates: [13.7721, 100.5088] },
             { name: "램차방", coordinates: [13.1017, 100.9090] }
         ],
-        "아시아내노선": [
-            { name: "기항지점", coordinates: [25, 125] },
-        ],
     },
     "유럽": {
-        "한국": [
-            { name: "당진", coordinates: [36.8936, 126.6283] },
+        "스페인": [
+            { name: "타라고나", coordinates: [41.1195, 1.2436] },
+            { name: "알헤시라스", coordinates: [36.1436, -5.4505] }, { name: "빌바오", coordinates: [43.2664, -2.9475] },
+        ],
+        "영국": [
+            { name: "리버풀", coordinates: [51.4105, -2.9862] },
+        ],
+        "벨기에": [
+            { name: "안트베르펜", coordinates: [51.2251, 4.4195] },
+        ],
+        "이탈리아": [
+            { name: "나폴리", coordinates: [42.9800, 12.7003] },
+        ],
+        "포르투갈": [
+            { name: "세투발", coordinates: [38.5271, -8.8905] },
         ],
     },
     "중동": {
-        "한국": [
-            { name: "당진", coordinates: [36.8936, 126.6283] },
+        "사우디아라비아": [
+            { name: "제다", coordinates: [21.4945, 39.2001] },
+            { name: "담맘", coordinates: [26.4338, 50.0996] },
+        ],
+        "이집트": [
+            { name: "수에즈", coordinates: [29.9693, 32.5414] },
+        ],
+        "쿠웨이트": [
+            { name: "쿠웨이트항", coordinates: [29.3203, 47.3938] },
         ],
     },
     "북미": {
-        "한국": [
-            { name: "당진", coordinates: [36.8936, 126.6283] },
+        "미국": [
+            { name: "휴스턴", coordinates: [29.7589, -95.3097] },
+            { name: "벤쿠버WA", coordinates: [45.6280, -122.6780] },
+            { name: "LA", coordinates: [34.0508, -118.1962] },
+            { name: "필라델피아", coordinates: [39.9563, -75.1780] },
+            { name: "사바나", coordinates: [32.0830, -81.0836] },
+            { name: "탬파", coordinates: [27.9459, -82.4433] },
+        ],
+        "캐나다": [
+            { name: "해밀턴", coordinates: [43.2673, -79.8755] },
+            { name: "쏘헬", coordinates: [46.0513, -73.1095] },
+            { name: "벤쿠버BC", coordinates: [49.2842, -123.1460] },
+        ],
+        "멕시코": [
+            { name: "만사니요", coordinates: [19.1126, -104.3378] },
+            { name: "카데나스", coordinates: [17.9637, -102.1940] },
+            { name: "탐피코", coordinates: [22.2319, -97.8619] },
         ],
     },
     "중/남미": {
-        "한국": [
-            { name: "당진", coordinates: [36.8936, 126.6283] },
+        "콜롬비아": [
+            { name: "부에나 벤투라", coordinates: [6.3946, -76.5601] },
+        ],
+        "페루": [
+            { name: "카야오", coordinates: [-8.9691, -77.7110] },
+        ],
+        "칠레": [
+            { name: "발파라이소", coordinates: [-33.0483, -71.6085] },
+        ],
+        "파나마": [
+            { name: "크리스토발", coordinates: [9.3532, -79.9002] },
         ],
     },
 };
