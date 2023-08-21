@@ -1,6 +1,6 @@
 <div align="center">
     
-# 정기선 항로의 효율 분석 및 시각화
+# 정기선 항로의 효율성 분석 및 시각화
 
 #### Visualization of Ship Transportation and Traffic Simulator
 
