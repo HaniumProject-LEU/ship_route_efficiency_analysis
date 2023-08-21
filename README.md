@@ -1,8 +1,10 @@
 <div align="center">
-    
+
+> 2023 스마트 해상물류 경진대회
+
 # 정기선 항로의 효율성 분석 및 시각화
 
-#### Visualization of Ship Transportation and Traffic Simulator
+#### Efficiency analysis and visualization of liner routes
 
 정기선이 이동하는 항로의 효율성을 비교하기 위해 각 항로의 효율성을 계산하여 시각화하는 서비스입니다.
 
