@@ -19,13 +19,13 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.SSH_SECRET_KEY }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
-run: |
-  echo "$SSH_KEY" > deploy_key.pem
-  chmod 600 deploy_key.pem
-  ssh -o StrictHostKeyChecking=no -i deploy_key.pem ubuntu@$SERVER_IP <<EOF
-    cd "/home/ubuntu/Shipping-Simulation"
-    git pull
-    npm install
-    tmux kill-session -t mysession || true
-    tmux new -d -s mysession 'npm start'
-  EOF
+        run: |
+          echo "$SSH_KEY" > deploy_key.pem
+          chmod 600 deploy_key.pem
+          ssh -o StrictHostKeyChecking=no -i deploy_key.pem ubuntu@$SERVER_IP <<EOF
+            cd "/home/ubuntu/Shipping-Simulation"
+            git pull
+            npm install
+            tmux kill-session -t mysession || true
+            tmux new -d -s mysession 'npm start'
+          EOF
