@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: rgba(100, 134, 246, 0.7);
+    /* background: rgba(100, 134, 246, 0.7); */
+    background: rgba(228, 31, 31, 0.7);
     padding: 50px;
 }
 
@@ -26,7 +27,7 @@ select {
     width: 100%;
     padding: 10px 15px;
     border-radius: 4px;
-    border:none;
+    border: none;
     background-color: rgba(255, 255, 255, 0.6);
     color: #111;
     font-size: 18px;
@@ -43,7 +44,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     /* transition 효과를 통일 */
-    color :white;
+    color: white;
 }
 
 #chartBtn,
@@ -115,9 +116,9 @@ p {
     border-collapse: collapse;
 }
 
-.info-table-portdata th, 
-.info-table-portdata td, 
-.info-table-deadata th, 
+.info-table-portdata th,
+.info-table-portdata td,
+.info-table-deadata th,
 .info-table-deadata td {
     border: 1px solid #e0e0e0;
     padding: 8px;
@@ -135,7 +136,3 @@ table tbody tr:nth-child(even) {
 table tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
-
-
-
-
