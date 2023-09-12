@@ -1,0 +1,99 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#chart-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(45deg, #9578c8, #7d9ff5, #9578c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+
+#popup-wrapper {
+    position: fixed;
+    top: 0;
+    right: -60%;
+    width: 60%;
+    height: 100%;
+    transition: right 0.3s;
+    z-index: 1000;
+    background: linear-gradient(45deg, rgba(169, 193, 255, 0.9),rgba(169, 193, 255, 0.9), rgba(169, 193, 255, 0.9));
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+
+#popup-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+}
+
+#close-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #333;
+    display: block;
+    z-index: 1001;
+    width: 10%;
+    text-align: center;
+}
+
+#popup-content {
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    height: 90%;
+}
+
+#popup-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height:100%;
+}
+
+#popup-content table,
+#popup-content table th,
+#popup-content table td {
+    border: 0.5px solid #717a80;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#popup-content table th,
+#popup-content table td {
+    padding: 8px;
+}
+
+#popup-content table th {
+    font-size: 24px;
+}
+
+#popup-content table tbody tr {
+    transition: background-color 0.3s;
+
+}
+
+#popup-content table tbody tr:hover {
+    background-color: #c5ddf7;
+}

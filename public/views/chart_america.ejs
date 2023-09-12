@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart[EuropeLine]</title>
+    <link rel="stylesheet" href="/css/chart_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="popup-wrapper">
+        <div id="popup-container">
+            <div id="popup-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contents</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DMU</td>
+                            <td id="dmu">-</td>
+                        </tr>
+                        <tr>
+                            <td>Efficiency</td>
+                            <td id="efficiency">-</td>
+                        </tr>
+                        <tr>
+                            <td>총 수송량 (Total Cargo Volume)</td>
+                            <td id="totalvol">-</td>
+                        </tr>
+                        <tr>
+                            <td>수송 거리 (Distance Traveled)</td>
+                            <td id="distance">-</td>
+                        </tr>
+                        <tr>
+                            <td>운항 시간 (Operating Time)</td>
+                            <td id="voyagetime">-</td>
+                        </tr>
+                        <tr>
+                            <td>대기 시간 (Waiting Time)</td>
+                            <td id="waittime">-</td>
+                        </tr>
+                        <tr>
+                            <td>연료량 (Fuel Consumption)</td>
+                            <td id="fuel">-</td>
+                        </tr>
+                        <tr>
+                            <td>작업 시간 (Working Time)</td>
+                            <td id="workhour">-</td>
+                        </tr>
+                        <tr>
+                            <td>항만 비용 (Port Expenses)</td>
+                            <td id="portcost">-</td>
+                        </tr>
+                        <tr>
+                            <td>자본 비용 (Capital Expenses)</td>
+                            <td id="capcost">-</td>
+                        </tr>
+                        <tr>
+                            <td>선원 수 (Crew Count)</td>
+                            <td id="efficiency">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="close-btn">
+            <i class="fas fa-times"></i> 
+        </div>
+    </div>
+    <script>
+        var dmuCount = <%= dmuCount %>; 
+    </script>
+    <script src="/js/chart/chart_america.js"></script>
+</body>
+
+</html>

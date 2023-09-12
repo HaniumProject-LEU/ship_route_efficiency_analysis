@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: rgba(100, 134, 246, 0.7);
+    padding: 50px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-element {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border:none;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #111;
+    font-size: 18px;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    /* 모든 버튼의 border-radius를 4px로 통일 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* transition 효과를 통일 */
+    color :white;
+}
+
+#chartBtn,
+#visualizeBtn,
+#submitBtn {
+    background-color: rgba(62, 47, 236, 0.9);
+}
+
+#chartBtn {
+    background-color: rgba(62, 47, 236, 0.9);
+
+}
+
+#visualizeBtn {
+    background-color: rgba(62, 47, 236, 0.9);
+}
+
+
+#linegenBtn {
+    background-color: rgba(62, 47, 236, 0.9);
+}
+
+#deagenBtn {
+    background-color: rgba(62, 47, 236, 0.9);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#selectedValues {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.info-section {
+    font-weight: bold;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.info-item-portdata,
+.info-item-deadata {
+    border: none;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+p {
+    margin: 0 0 16px;
+    font-weight: bold;
+}
+
+.info-table-portdata,
+.info-table-deadata {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table-portdata th, 
+.info-table-portdata td, 
+.info-table-deadata th, 
+.info-table-deadata td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    text-align: center;
+}
+
+table thead th {
+    background-color: #f0f0f0;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+
+
+

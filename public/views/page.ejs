@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Initial Input Page</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/page_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <form action="/chart_europe" method="GET" id="myForm">
+        <div class="form-element">
+            <label for="region">권역 종류[노선을 선택]:</label>
+            <select id="region" name="region">
+                <option value="구주노선">구주노선</option>
+                <option value="미주노선">미주노선</option>
+                <option value="아시아내노선">아시아내노선</option>
+            </select>
+        </div>
+
+        <div class="form-element hidden" id="portSection">
+            <label for="departurePort">출발 항구:</label>
+            <select id="departurePort" name="departurePort"></select>
+        </div>
+
+        <div class="form-element hidden">
+            <label for="arrivalPort">도착 항구:</label>
+            <select id="arrivalPort" name="arrivalPort"></select>
+        </div>
+
+        <div class="form-element">
+            <label for="numberOfPorts">기항지의 개수:</label>
+            <select id="numberOfPorts" name="numberOfPorts">
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="dmuCount">DMU 개수:</label>
+            <select id="dmuCount" name="dmuCount">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="teu">TEU:</label>
+            <select id="teu" name="teu">
+                <option value="2000">2000</option>
+                <option value="3000">3000</option>
+                <option value="4000">4000</option>
+            </select>
+        </div>
+
+        <button type="button" id="submitBtn">제출</button>
+    </form>
+
+    <div id="selectedValues" class="info-section">
+        Data
+    </div>
+    <div style="margin:10px"></div>
+    <button id="linegenBtn">노선생성</button>
+
+    <div class="info-item-portdata">
+        <p>Transit Port</p>
+        <table class="info-table-portdata">
+            <thead>
+                <tr>
+                    <th>DMU</th>
+                    <th>출발지</th>
+                    <th>도착지</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 이 부분 동적으로 생성-->
+            </tbody>
+        </table>
+    </div>
+    <div style="margin:10px"></div>
+    <button id="deagenBtn">DEA데이터생성</button>
+    <div class="info-item-deadata">
+        <p>DEA Input Output Variable </p>
+        <table class="info-table-deadata">
+            <thead>
+                <tr>
+                    <th>DMU</th>
+                    <th>총 수송량 (Total Cargo Volume)</th>
+                    <th>수송 거리 (Distance Traveled)</th>
+                    <th>운항 시간 (Operating Time)</th>
+                    <th>대기 시간 (Waiting Time)</th>
+                    <th>연료량 (Fuel Consumption)</th>
+                    <th>작업 시간 (Working Time)</th>
+                    <th>항만 비용 (Port Expenses)</th>
+                    <th>자본 비용 (Capital Expenses)</th>
+                    <th>선원 수 (Crew Count)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 이 부분 동적으로 생성-->
+            </tbody>
+        </table>
+    </div>
+
+    <button id="chartBtn">차트 보기</button>
+    <button id="visualizeBtn">시각화</button>
+    
+
+    <script src='/js/webpage/input.js'></script>
+</body>
+
+</html>
