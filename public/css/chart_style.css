@@ -9,7 +9,7 @@ html {
     height: 100%;
     width: 100%;
     position: relative;
-    background: linear-gradient(45deg, #9578c8, #7d9ff5, #9578c8);
+    background: linear-gradient(45deg, #ccc5dd, #b7b8bc, #beb5cf);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@ html {
     height: 100%;
     transition: right 0.3s;
     z-index: 1000;
-    background: linear-gradient(45deg, rgba(169, 193, 255, 0.9),rgba(169, 193, 255, 0.9), rgba(169, 193, 255, 0.9));
+    background: linear-gradient(45deg, rgba(199, 209, 235, 0.9),rgba(170, 180, 206, 0.9), rgba(169, 193, 255, 0.9));
     border-radius: 15px;
     overflow-y: auto;
 }
