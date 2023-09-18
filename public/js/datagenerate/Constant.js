@@ -56,28 +56,28 @@ const CONST = {
 
     // dmu 변수 예시 (임시 데이터)
     dmuVariable: {
-        totalTransportationAmount: 429212, //총수송량
-        transportationDinstance: 557660, // 총수송거리
-        operatingTime: 32332.5, // 운항시간 
-        waitingTime: 1560.1, // 대기시간
-        workingTime: 7748.4, // 작업시간
+        transportAmount: 429212, //총수송량
+        transportDistance: 557660, // 총수송거리
+        voyageTime: 32332.5, // 운항시간
+        waitTime: 1560.1, // 대기시간
+        workTime: 7748.4, // 작업시간
         portCost: 5708387, // 항만비용
         capitalCost: 1097629, // 자본비용
-        sailorsCount: 1597, // 선원수
-        fuelAmount: 12, // 연료량
+        member: 1597, // 선원수
+        fuel: 12, // 연료량
     },
 
     // DMU 변수간의 배수의 평균
     dmuVariableTimes: {
-        totalTransportationAmount: 1741.72, //총수송량
-        transportationDinstance: 2256.74, // 총수송거리
-        operatingTime: 130.57, // 운항시간 
-        waitingTime: 6.29, // 대기시간
-        workingTime: 31.21, // 작업시간
+        transportAmount: 1741.72, //총수송량
+        transportDistance: 2256.74, // 총수송거리
+        voyageTime: 130.57, // 운항시간
+        waitTime: 6.29, // 대기시간
+        workTime: 31.21, // 작업시간
         portCost: 23128.58, // 항만비용
         capitalCost: 4440.3, // 자본비용
-        sailorsCount: 6.46, // 선원수
-        fuelAmount: 1.0, // 연료량
+        member: 6.46, // 선원수
+        fuel: 1.0, // 연료량
     },
 
     // 평균치 기반 TEU 급 별 수송거리 / 운항시간

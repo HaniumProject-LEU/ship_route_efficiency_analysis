@@ -3,11 +3,13 @@
 
 const CONST = require('./Constant');
 
-const data_voyagetime = {
+const data_voyageTime = {
     getVoyageTime(userInput, callingPorts) {
         let voyageTime = 10000;
         return voyageTime;
     }
 }
 
-module.exports = data_voyagetime;
+// console.log(data_voyageTime.getVoyageTime(CONST.userInput, CONST.callingPorts));
+
+module.exports = data_voyageTime;
