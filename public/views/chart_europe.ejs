@@ -6,25 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chart[EuropeLine]</title>
     <link rel="stylesheet" href="/css/chart_style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/page_style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-    <div id="chart-grid">
-        <div>
-            <canvas id="myChartBar"></canvas>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-lg sticky-top">
+        <div class="container">
+            <a href="/" class="navbar-brand align-middle">
+                <h3 class="m-0">
+                    <img src="images/LEUU.png" alt="Logo" height="60px" width="170px">
+
+                </h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/visual_world" class="nav-link">
+                            Visualization
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </div>
         </div>
-        <div>
-            <canvas id="myChartBubble"></canvas>
+    </nav>
+    <div style="margin:10px"></div>
+    <div class="content-container">
+        <div id="chart-grid">
+            <div><canvas id="myChartBar"></canvas></div>
+            <div><canvas id="myChartScatter"></canvas></div>
+            <div><canvas id="myChartLine"></canvas></div>
+            <div><canvas id="myChartPie"></canvas></div>
         </div>
-        <div>
-            <canvas id="myChartLine"></canvas>
-        </div>
-        <div>
-            <canvas id="myChartPie"></canvas>
+        <div class="text-box">
+            <p>이 차트는 DEA-CCR (<span class="highlight">Data Envelopment Analysis - Charnes, Cooper, Rhodes</span>) 모델을
+                활용하여 각 DMU (Decision Making Unit)의 효율성을 시각적으로 보여줍니다. 각 DMU는 여러 항구로 이루어져 있으며, 세부 항구 정보는 클릭하면 팝업 창에서 확인할 수
+                있습니다.</p>
+
+            <p>팝업 창 안에는 각 DMU에 속한 여러 항구들의 연산값이 포함되어 있으며, 이 값에는 총 수송량, 수송 거리, 운항 시간, 대기 시간, 연료량, 작업 시간, 항만 비용, 자본 비용, 그리고
+                선원 수와 같은 정보가 포함됩니다.</p>
+
+            <p>이를 통해 사용자는 각 DMU의 운영 효율성을 비교하고 분석할 수 있습니다.</p>
         </div>
     </div>
-    
     <div id="popup-wrapper">
         <div id="popup-container">
             <div id="popup-content">
@@ -85,13 +124,14 @@
             </div>
         </div>
         <div id="close-btn">
-            <i class="fas fa-times"></i> 
+            <i class="fas fa-times"></i>
         </div>
     </div>
     <script>
-        var dmuCount = <%= dmuCount %>; // 서버에서 dmuCount 값을 가져옵니다.
+        var dmuCount = <%= dmuCount %>; 
     </script>
     <script src="/js/chart/chart_europe.js"></script>
+    <script src='/js/webpage/input.js'></script>
 </body>
 
 </html>
