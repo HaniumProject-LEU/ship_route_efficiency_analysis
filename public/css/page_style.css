@@ -136,3 +136,8 @@ table tbody tr:nth-child(even) {
 table tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
+
+.select-route-type{
+    justify-content: space-between;
+    
+}
