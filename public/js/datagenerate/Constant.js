@@ -65,7 +65,20 @@ const CONST = {
         capitalCost: 1097629, // 자본비용
         sailorsCount: 1597, // 선원수
         fuelAmount: 12, // 연료량
-    }
+    },
+
+    // DMU 변수간의 배수의 평균
+    dmuVariableTimes: {
+        totalTransportationAmount: 1741.72, //총수송량
+        transportationinstance: 2256.74, // 총수송거리
+        operatingTime: 130.57, // 운항시간 
+        waitingTime: 6.29, // 대기시간
+        workingTime: 31.21, // 작업시간
+        portCost: 23128.58, // 항만비용
+        capitalCost: 4440.3, // 자본비용
+        sailorsCount: 6.46, // 선원수
+        fuelAmount: 1.0, // 연료량
+    },
 }
 
 
