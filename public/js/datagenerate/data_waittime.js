@@ -16,6 +16,6 @@ const data_waittime = {
     }
 }
 
-console.log(data_waittime.getWaitTime(CONST.userInput, CONST.callingPorts));
+//console.log(data_waittime.getWaitTime(CONST.userInput, CONST.callingPorts));
 
 module.exports = data_waittime;
