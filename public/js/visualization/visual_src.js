@@ -351,6 +351,7 @@
             this.marker.rotation = this.trailAngle + Math.PI / 2;
             this.marker.draw(context);
             context.restore();
+            
 
             // 애니메이션 완료 시 초기화
             if ((endAngle - this.trailAngle) * 180 / Math.PI < 0.5) {

@@ -154,7 +154,10 @@ for (var continent in continents) {
             continentCoordinates.push([port.coordinates[1], port.coordinates[0]]);
             // 새로운 아이콘 클래스를 사용하여 마커 생성
             L.marker([port.coordinates[1], port.coordinates[0]], { icon: customIcon }).addTo(lrmap)
-                .bindPopup(`${continent} -> ${country} -> ${port.name} [${port.coordinates[1]}, ${port.coordinates[0]}]`)
+                .bindPopup(`${continent} -> ${country} -> ${port.name} [${port.coordinates[1]}, ${port.coordinates[0]}]`, {
+                    maxWidth: 400, // 최대 너비를 400px로 설정
+                    maxHeight: 100 // 최대 높이를 200px로 설정
+                })
                 .openPopup();
         });
     }
