@@ -17,16 +17,26 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/page_app.css">
     <title>Start Page</title>
+    <style>
+        /* 추가된 CSS: 버튼 사이의 간격을 조절합니다. */
+        #custom-controls button {
+            margin-right: 10px;
+            background-color: rgb(255, 112, 3);
+            border: 2px solid rgb(255, 112, 3); 
+            width: 40px; 
+            height: 40px; 
+        }
+    </style>
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-lg sticky-top">
         <div class="container">
-            <a href="page_home.ejs" class="navbar-brand align-middle">
+            <a href="/" class="navbar-brand align-middle">
                 <h3 class="m-0">
-                    <img src="images/bootstrap-logo.png" alt="Logo" height="36px">
-                    LEU
+                    <img src="images/LEUU.png" alt="Logo" height="60px" width="170px">
+                    
                 </h3>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -232,11 +242,17 @@
                         <div class="card-body">
                             <h4 class="card-title">5. 선박의 이동 동선 시각화</h4>
                             <p class="card-text fw-light mb-4">
-                                시뮬레이션을 통해 선박의 이동을 시각화 합니다.
+                                시뮬레이션을 통해 선박 이동 동선을 시각화하고, 마커 클릭으로 DEA 연산 데이터를 볼 수 있습니다.
                             </p>
                             <a href="#" class="btn btn-primary">View more...</a>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <div id="custom-controls" style="display: flex; justify-content: center; align-items: center;">
+                    <button id="custom-prev" class="slick-prev btn btn-primary">◀</button>
+                    <button id="custom-next" class="slick-next btn btn-primary"> ▶ </button>
                 </div>
             </div>
         </div>
@@ -255,7 +271,8 @@
         $(document).ready(function () {
             $('#slick-slide').slick({
                 slidesToShow: 3, // 4개의 카드를 가로로 나열하도록 설정 (원하는 개수로 변경 가능)
-                nextArrow: '<button class="slick-next">Next</button>'
+                nextArrow: $('#custom-next'),
+                prevArrow: $('#custom-prev'),
             });
         });
         const slickSlide = jQuery('#slcik-slide')
