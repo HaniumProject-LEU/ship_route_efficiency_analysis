@@ -79,6 +79,15 @@ const CONST = {
         sailorsCount: 6.46, // 선원수
         fuelAmount: 1.0, // 연료량
     },
+
+    // 평균치 기반 TEU 급 별 수송거리 / 운항시간
+    speedsDependsOnTEU: {
+        1000: 15,
+        2000: 18.3,
+        3000: 21.6,
+        4000: 25,
+        5000: 26,
+    }
 }
 
 
