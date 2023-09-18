@@ -57,7 +57,7 @@ const CONST = {
     // dmu 변수 예시 (임시 데이터)
     dmuVariable: {
         totalTransportationAmount: 429212, //총수송량
-        transportationinstance: 557660, // 총수송거리
+        transportationDinstance: 557660, // 총수송거리
         operatingTime: 32332.5, // 운항시간 
         waitingTime: 1560.1, // 대기시간
         workingTime: 7748.4, // 작업시간
@@ -70,7 +70,7 @@ const CONST = {
     // DMU 변수간의 배수의 평균
     dmuVariableTimes: {
         totalTransportationAmount: 1741.72, //총수송량
-        transportationinstance: 2256.74, // 총수송거리
+        transportationDinstance: 2256.74, // 총수송거리
         operatingTime: 130.57, // 운항시간 
         waitingTime: 6.29, // 대기시간
         workingTime: 31.21, // 작업시간
