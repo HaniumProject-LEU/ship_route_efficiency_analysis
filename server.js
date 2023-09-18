@@ -13,6 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 라우트
 app.get('/', (req, res) => {
+  res.render('page_home');
+});
+
+app.get('/page',(req,res)=>{
   res.render('page');
 });
 
