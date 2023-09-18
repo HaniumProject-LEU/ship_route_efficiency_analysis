@@ -1,21 +1,21 @@
 const CONST = require('./Constant');
 
-const data_portcost = {
+const data_portCost = {
     /**
      * 항만비용 반환 함수
      * @param {Object} userInput 사용자 입력 
      * @param {String[]} callingPorts 기항지 배열
      */
-    getPortcost(userInput, callingPorts) {
-        let totalPortcost = 0;
+    getPortCost(userInput, callingPorts) {
+        let totalPortCost = 0;
         for (let i = 0; i < callingPorts.length; i++) {
             let country = (CONST.portCountry[callingPorts[i]]);
-            totalPortcost += CONST.continents[userInput.continent][country][callingPorts[i]].portCost;
+            totalPortCost += CONST.continents[userInput.continent][country][callingPorts[i]].portCost;
         }
-        return totalPortcost;
+        return totalPortCost;
     }
 }
 
-// console.log(data_portcost.getPortcost(CONST.userInput, CONST.callingPorts));
+//console.log(data_portCost.getPortCost(CONST.userInput, CONST.callingPorts));
 
-module.exports = data_portcost;
+module.exports = data_portCost;

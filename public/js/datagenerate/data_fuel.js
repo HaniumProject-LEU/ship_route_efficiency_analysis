@@ -19,12 +19,11 @@ const data_fuel = {
      * @param {String[]} callingPorts 기항지 배열
      */
     getFuel(userInput, callingPorts) {
-        let totalFuel = 1;
-        let averageFuelUse = this.fuelUseDependsOnTEU[userInput.teu];
-        return normal_distribution(averageFuelUse * 0.7, averageFuelUse * 1.3);
+        let averageFuel = this.fuelUseDependsOnTEU[userInput.teu];
+        return normal_distribution(averageFuel * 0.7, averageFuel * 1.3);
     }
 }
 
-// console.log(data_fuel.getFuel(CONST.userInput, CONST.callingPorts));
+//console.log(data_fuel.getFuel(CONST.userInput, CONST.callingPorts));
 
 module.exports = data_fuel;
