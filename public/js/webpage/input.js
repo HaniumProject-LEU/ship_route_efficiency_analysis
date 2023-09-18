@@ -209,6 +209,17 @@ submitBtn.addEventListener('click', function () {
 });
 
 function updateTable1(dmuCount) {
+    XXXXXX = [
+        1741.72, //총수송량
+        2256.74, // 총수송거리
+        130.57, // 운항시간
+        6.29, // 대기시간
+        1.0, // 연료량
+        31.21, // 작업시간
+        23128.58, // 항만비용
+        4440.3, // 자본비용
+        6.46, // 선원수
+    ] // 임시
     tableBody1.innerHTML = '';
     for (let i = 0; i < dmuCount; i++) {
         const row = document.createElement('tr');
@@ -217,13 +228,34 @@ function updateTable1(dmuCount) {
         row.appendChild(dmuCell);
         for (let j = 0; j < 9; j++) {
             const cell = document.createElement('td');
-            cell.textContent = '-';
+            cell.textContent = (Math.random() * 10 * XXXXXX[j]).toFixed(2); // 임시
+            // cell.textContent = '-'; // 원본
             row.appendChild(cell);
         }
         tableBody1.appendChild(row);
     }
 }
 function updateTable2(dmuCount) {
+    let selectedValues = getSelectedValues();
+    let selectedRegion = selectedValues.region;
+    let selectedPortData = portData[selectedRegion];
+    let departure = selectedValues.departurePort;
+    let arrival = selectedValues.arrivalPort;
+
+    let gruopArr = [];
+    for (let objKey in selectedPortData) {
+        if(selectedPortData.hasOwnProperty(objKey)) {
+            gruopArr.push(objKey);
+        }
+    }
+
+    let portArr = []
+    for (let i in gruopArr) {
+        for (let j in selectedPortData[gruopArr[i]]){
+            portArr.push(selectedPortData[gruopArr[i]][j]);
+        }
+    }
+
     tableBody2.innerHTML = '';
 
     const tableHeadRow2 = document.querySelector('.info-table-portdata thead tr');
@@ -236,7 +268,10 @@ function updateTable2(dmuCount) {
 
         for (let j = 0; j < tableHeadRow2.children.length - 1; j++) {
             const cell = document.createElement('td');
-            cell.textContent = '-';
+            let len = portArr.length - 1; // 임시
+            let randomIndex = parseInt(len * Math.random()); // 임시
+            cell.textContent = portArr[randomIndex].name; // 임시
+            // cell.textContent = '-'; // 원본
             row.appendChild(cell);
         }
 

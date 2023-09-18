@@ -1,6 +1,6 @@
 const CONST = require('./Constant');
 const normal_distribution = require('./normal_distribution');
-const data_workhour = require('./data_workhour');
+const data_voyageTime = require('./data_voyageTime');
 
 const data_member = {
     /**
@@ -10,9 +10,9 @@ const data_member = {
      * @param {String[]} callingPorts 기항지 배열
      */
     getMember(userInput, callingPorts) {
-        let ratio = CONST.dmuVariableTimes['sailorsCount'] / CONST.dmuVariableTimes['operatingTime'];
-        let operatingTime = data_workhour.getWorkhour(userInput, callingPorts);
-        let averageMember = operatingTime * ratio;
+        let ratio = CONST.dmuVariableTimes['member'] / CONST.dmuVariableTimes['workTime'];
+        let voyageTime = data_voyageTime.getVoyageTime(userInput, callingPorts);
+        let averageMember = voyageTime * ratio;
         let generatedMember = normal_distribution(averageMember * 0.9, averageMember * 1.1);
         return generatedMember;
     }
