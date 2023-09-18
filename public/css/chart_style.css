@@ -2,24 +2,39 @@ body,
 html {
     height: 100%;
     margin: 0;
-    overflow: hidden;
+    background-color: #ff8000;
 }
 
-#chart-container {
+.content-container {
+    display: flex;
     height: 100%;
-    width: 100%;
-    position: relative;
-    background: linear-gradient(45deg, #ccc5dd, #b7b8bc, #beb5cf);
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
-    border: none;
+    overflow: auto;
+    padding: 10px;
+    background-color: #16263f;
+}
+
+.text-box {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid  #16263f;
+    background-color:  #16263f;
+    overflow: auto;
+    margin: auto 0;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    line-height: 1.6;
+    color: #ffffff;
+    border-radius: 5px;
 }
 
 #chart-grid {
+    flex: 2;
     display: grid;
-    grid-template-columns: 0.7fr 0.7fr;
-    grid-template-rows: 0.7fr 0.7fr;
-    height: 100%;
-    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 80%;
+    gap: 10px;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -29,12 +44,38 @@ html {
     height: 100%;
 }
 
+#chart-grid div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #feffff;
+    border-radius: 5px;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ff8000;
+    /* 하이라이트 색상 변경 */
+}
+
+
+div {
+    box-sizing: border-box;
+}
+
+
 #popup-wrapper {
     position: fixed;
-    top: 0;
+    top: 132px;
     right: -60%;
     width: 60%;
-    height: 100%;
+    height: 85%;
     transition: right 0.3s;
     z-index: 1000;
     background: linear-gradient(45deg, rgba(199, 209, 235, 0.9), rgba(170, 180, 206, 0.9), rgba(169, 193, 255, 0.9));
