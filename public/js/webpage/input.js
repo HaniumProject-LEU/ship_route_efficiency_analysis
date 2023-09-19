@@ -233,12 +233,30 @@ function updateTable1(dmuCount) {
         tableBody1.appendChild(row);
     }
 }
+
+// 항로 생성 위한 순열 알고리즘
+const getPermutations = function (arr, selectNumber) {
+    const len = arr.length;
+    if (selectNumber == 1 || len < selectNumber) {
+        return arr;
+    }
+    const results = [];
+    const resultsIndex = [];
+    while (resultsIndex.length < selectNumber) {
+        let randomIndex = Math.floor(Math.random() * len); // (0 ~ arr의 길이-1) 까지의 숫자 나옴
+        if (resultsIndex.includes(randomIndex)) continue;
+        resultsIndex.push(randomIndex);
+    }
+    for(let i = 0; i < resultsIndex.length; i++) {
+        results.push(arr[resultsIndex[i]]);
+    }
+    return results; // 결과 담긴 results return
+}
+
 function updateTable2(dmuCount) {
     let selectedValues = getSelectedValues();
     let selectedRegion = selectedValues.region;
     let selectedPortData = portData[selectedRegion];
-    let departure = selectedValues.departurePort;
-    let arrival = selectedValues.arrivalPort;
 
     let gruopArr = [];
     for (let objKey in selectedPortData) {
@@ -250,8 +268,15 @@ function updateTable2(dmuCount) {
     let portArr = []
     for (let i in gruopArr) {
         for (let j in selectedPortData[gruopArr[i]]){
-            portArr.push(selectedPortData[gruopArr[i]][j]);
+            portArr.push(selectedPortData[gruopArr[i]][j].name);
         }
+    }
+
+    let generatedRouteArray = [];
+    for(let c = 0; c < selectedValues.dmuCount; c++) {
+        let generatedLane = getPermutations(portArr, parseInt(selectedValues.numberOfPorts) + 2);
+        if (generatedRouteArray.includes(generatedLane)) continue;
+        generatedRouteArray.push(generatedLane);
     }
 
     tableBody2.innerHTML = '';
@@ -268,7 +293,7 @@ function updateTable2(dmuCount) {
             const cell = document.createElement('td');
             let len = portArr.length - 1; // 임시
             let randomIndex = parseInt(len * Math.random()); // 임시
-            cell.textContent = portArr[randomIndex].name; // 임시
+            cell.textContent = generatedRouteArray[i][j]; // 임시
             // cell.textContent = '-'; // 원본
             row.appendChild(cell);
         }
