@@ -33,7 +33,6 @@ document.getElementById('submitBtn').addEventListener('click', function (event) 
 
 document.getElementById('chartBtn').addEventListener('click', function () {
     const selectedValues = getSelectedValues();
-
     let chartPage;
     switch (selectedValues.region) {
         case '구주노선':
@@ -55,7 +54,6 @@ document.getElementById('chartBtn').addEventListener('click', function () {
 
 document.getElementById('visualizeBtn').addEventListener('click', function () {
     const selectedValues = getSelectedValues();
-
     let visualPage;
     switch (selectedValues.region) {
         case '구주노선':

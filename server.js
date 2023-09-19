@@ -15,14 +15,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.render('page_home');
 });
+
 app.get('/page_home', (req, res) => {
   res.render('page_home');
 });
 
-app.get('/page',(req,res)=>{
+app.get('/page', (req, res) => {
   res.render('page');
 });
 
+// 차트 페이지 라우트
 app.get('/chart_europe', (req, res) => {
   const {
     departurePort,
@@ -32,7 +34,6 @@ app.get('/chart_europe', (req, res) => {
     dmuCount,
     teu,
   } = req.query;
-
 
   res.render('chart_europe', {
     departurePort,
@@ -143,22 +144,8 @@ app.get('/visual_asia', (req, res) => {
     teu,
   });
 });
-// app.get('/visual_world', (req, res) => {
-//   res.render('visual_world');
-// });
-
-// app.get('/visual_europe', (req, res) => {
-//   res.render('visual_europe');
-// });
-
-// app.get('/visual_asia', (req, res) => {
-//   res.render('visual_asia');
-// });
-
-// app.get('/visual_america', (req, res) => {
-//   res.render('visual_america');
-// });
-
-
+app.get('/visual_world', (req, res) => {
+  res.render('visual_world');
+});
 
 module.exports = app;
