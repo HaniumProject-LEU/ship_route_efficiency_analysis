@@ -130,7 +130,7 @@ for (var continent in continents) {
                         </tr>
                     </table>
                     <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=${port.coordinates[0] - 0.01}%2C${port.coordinates[1] - 0.01}%2C${port.coordinates[0] + 0.01}%2C${port.coordinates[1] + 0.01}&layer=mapnik&marker=${port.coordinates[1]}%2C${port.coordinates[0]}" style="border: 1px solid #ccc; border-radius: 10px; margin-top: 10px;">
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=${port.coordinates[0] - 0.01}%2C${port.coordinates[1] - 0.01}%2C${port.coordinates[0] + 0.01}%2C${port.coordinates[1] + 0.01}&layer=mapnik&marker=${port.coordinates[1]}%2C${port.coordinates[0]}" style="border: 1px solid #ccc; border-radius: 10px; margin: 30px;">
                     </iframe>
                 `, {
                     maxWidth: 600,
