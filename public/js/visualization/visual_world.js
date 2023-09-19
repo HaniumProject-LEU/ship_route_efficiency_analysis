@@ -181,6 +181,7 @@ var customDefaultIcon = L.Icon.Default.extend({
 });
 
 
+
 var customIcon = new customDefaultIcon();
 
 for (var continent in continents) {
@@ -188,16 +189,40 @@ for (var continent in continents) {
     for (var country in continents[continent]) {
         continents[continent][country].forEach(port => {
             continentCoordinates.push([port.coordinates[1], port.coordinates[0]]);
-            // 새로운 아이콘 클래스를 사용하여 마커 생성
             L.marker([port.coordinates[1], port.coordinates[0]], { icon: customIcon }).addTo(lrmap)
-                .bindPopup(`${continent} -> ${country} -> ${port.name} [${port.coordinates[1]}, ${port.coordinates[0]}]`, {
-                    maxWidth: 100, // 최대 너비를 400px로 설정
-                    maxHeight: 100 // 최대 높이를 200px로 설정
+                .bindPopup(`
+                <table style="width: 100%; border-collapse: collapse; color: white;"> 
+                <tr style="background-color: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ccc;">
+                    <td style="padding: 10px; font-weight: bold;">대륙</td>
+                    <td style="padding: 10px;">${continent}</td>
+                </tr>
+                        <tr style="border-bottom: 1px solid #ccc;">
+                            <td style="padding: 10px; font-weight: bold;">국가</td>
+                            <td style="padding: 10px;">${country}</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #ccc;">
+                            <td style="padding: 10px; font-weight: bold;">항구</td>
+                            <td style="padding: 10px;">${port.name}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; font-weight: bold;">좌표</td>
+                            <td style="padding: 10px;">[${port.coordinates[1]}, ${port.coordinates[0]}]</td>
+                        </tr>
+                    </table>
+                    <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=${port.coordinates[0] - 0.01}%2C${port.coordinates[1] - 0.01}%2C${port.coordinates[0] + 0.01}%2C${port.coordinates[1] + 0.01}&layer=mapnik&marker=${port.coordinates[1]}%2C${port.coordinates[0]}" style="border: 1px solid #ccc; border-radius: 10px; margin-top: 10px;">
+                    </iframe>
+                `, {
+                    maxWidth: 600,
+                    maxHeight: 650,
+                    className: 'dark-popup'
                 })
                 .openPopup();
         });
     }
 }
+
+
 
 
 // 그룹 별로 색깔 다르게
