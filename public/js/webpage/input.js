@@ -33,7 +33,6 @@ document.getElementById('submitBtn').addEventListener('click', function (event) 
 
 document.getElementById('chartBtn').addEventListener('click', function () {
     const selectedValues = getSelectedValues();
-
     let chartPage;
     switch (selectedValues.region) {
         case '구주노선':
@@ -55,7 +54,6 @@ document.getElementById('chartBtn').addEventListener('click', function () {
 
 document.getElementById('visualizeBtn').addEventListener('click', function () {
     const selectedValues = getSelectedValues();
-
     let visualPage;
     switch (selectedValues.region) {
         case '구주노선':
@@ -209,6 +207,17 @@ submitBtn.addEventListener('click', function () {
 });
 
 function updateTable1(dmuCount) {
+    XXXXXX = [
+        1741.72, //총수송량
+        2256.74, // 총수송거리
+        130.57, // 운항시간
+        6.29, // 대기시간
+        1.0, // 연료량
+        31.21, // 작업시간
+        23128.58, // 항만비용
+        4440.3, // 자본비용
+        6.46, // 선원수
+    ] // 임시
     tableBody1.innerHTML = '';
     for (let i = 0; i < dmuCount; i++) {
         const row = document.createElement('tr');
@@ -217,13 +226,59 @@ function updateTable1(dmuCount) {
         row.appendChild(dmuCell);
         for (let j = 0; j < 9; j++) {
             const cell = document.createElement('td');
-            cell.textContent = '-';
+            cell.textContent = (Math.random() * 10 * XXXXXX[j]).toFixed(2); // 임시
+            // cell.textContent = '-'; // 원본
             row.appendChild(cell);
         }
         tableBody1.appendChild(row);
     }
 }
+
+// 항로 생성 위한 순열 알고리즘
+const getPermutations = function (arr, selectNumber) {
+    const len = arr.length;
+    if (selectNumber == 1 || len < selectNumber) {
+        return arr;
+    }
+    const results = [];
+    const resultsIndex = [];
+    while (resultsIndex.length < selectNumber) {
+        let randomIndex = Math.floor(Math.random() * len); // (0 ~ arr의 길이-1) 까지의 숫자 나옴
+        if (resultsIndex.includes(randomIndex)) continue;
+        resultsIndex.push(randomIndex);
+    }
+    for(let i = 0; i < resultsIndex.length; i++) {
+        results.push(arr[resultsIndex[i]]);
+    }
+    return results; // 결과 담긴 results return
+}
+
 function updateTable2(dmuCount) {
+    let selectedValues = getSelectedValues();
+    let selectedRegion = selectedValues.region;
+    let selectedPortData = portData[selectedRegion];
+
+    let gruopArr = [];
+    for (let objKey in selectedPortData) {
+        if(selectedPortData.hasOwnProperty(objKey)) {
+            gruopArr.push(objKey);
+        }
+    }
+
+    let portArr = []
+    for (let i in gruopArr) {
+        for (let j in selectedPortData[gruopArr[i]]){
+            portArr.push(selectedPortData[gruopArr[i]][j].name);
+        }
+    }
+
+    let generatedRouteArray = [];
+    for(let c = 0; c < selectedValues.dmuCount; c++) {
+        let generatedLane = getPermutations(portArr, parseInt(selectedValues.numberOfPorts) + 2);
+        if (generatedRouteArray.includes(generatedLane)) continue;
+        generatedRouteArray.push(generatedLane);
+    }
+
     tableBody2.innerHTML = '';
 
     const tableHeadRow2 = document.querySelector('.info-table-portdata thead tr');
@@ -236,7 +291,10 @@ function updateTable2(dmuCount) {
 
         for (let j = 0; j < tableHeadRow2.children.length - 1; j++) {
             const cell = document.createElement('td');
-            cell.textContent = '-';
+            let len = portArr.length - 1; // 임시
+            let randomIndex = parseInt(len * Math.random()); // 임시
+            cell.textContent = generatedRouteArray[i][j]; // 임시
+            // cell.textContent = '-'; // 원본
             row.appendChild(cell);
         }
 

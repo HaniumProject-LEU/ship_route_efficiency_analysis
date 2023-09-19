@@ -1,4 +1,22 @@
-html,
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #16263f;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8000;
+}
+
+tml,
 body {
     margin: 0;
     padding: 0;
@@ -12,11 +30,11 @@ body {
 
 #event {
     position: absolute;
-            top: 50px;
-            right: 0px;
-            height: 100px;
-            width: 400px;
-            z-index: 10000;
+    top: 50px;
+    right: 0px;
+    height: 100px;
+    width: 400px;
+    z-index: 10000;
 }
 
 #toolbar {
@@ -24,4 +42,19 @@ body {
     bottom: 20px;
     left: 20px;
     z-index: 10000;
+}
+
+.dark-popup .leaflet-popup-content-wrapper {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 12px;
+}
+
+.dark-popup .leaflet-popup-tip {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+.btn-primary {
+    margin:3px;
 }
