@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #fff; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #16263f;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:  #ff8000; 
+}
+
 body,
 html {
     height: 100%;
@@ -17,15 +35,35 @@ html {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-    border: 1px solid  #16263f;
-    background-color:  #16263f;
     overflow: auto;
-    margin: auto 0;
+    margin-top: 10px;
+    margin-right: 10px;
     font-family: Arial, sans-serif;
     font-size: 25px;
-    line-height: 1.6;
-    color: #ffffff;
-    border-radius: 5px;
+    line-height: 2;
+    color: #181616;
+    border-radius: 40px;
+    font-weight: bold;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #e4dbce;
+    height: 1010px;
+}
+
+
+.text-box div {
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: left;
+    height: 250px;
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    background-color: #273c5d;
+    box-shadow: 5px 5px 5px #7c8284;
+    overflow: auto;
 }
 
 #chart-grid {
@@ -51,7 +89,8 @@ html {
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #feffff;
-    border-radius: 5px;
+    border-radius: 30px;
+    height: 500px;
 }
 
 div {
@@ -60,8 +99,7 @@ div {
 
 .highlight {
     font-weight: bold;
-    color: #ff8000;
-    /* 하이라이트 색상 변경 */
+    color: #812000;
 }
 
 
