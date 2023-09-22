@@ -10,6 +10,8 @@
 
 </div>
 
+## 작동 영상
+[![Efficiency analysis and visualization of liner routes](https://img.youtube.com/vi/zmjD87WC4QA/0.jpg)](https://www.youtube.com/watch?v=zmjD87WC4QA)
 
 ## 기능 목록
 
