@@ -194,11 +194,11 @@ const dmuSelect = document.getElementById('dmuCount');
 const tableBody1 = document.querySelector('.info-table-deadata tbody');
 const tableBody2 = document.querySelector('.info-table-portdata tbody');
 
-dmuSelect.addEventListener('change', function () {
-    const dmuCount = parseInt(this.value, 10);
-    updateTable1(dmuCount);
-    updateTable2(dmuCount);
-});
+// dmuSelect.addEventListener('change', function () {
+//     const dmuCount = parseInt(this.value, 10);
+//     updateTable1(dmuCount);
+//     updateTable2(dmuCount);
+// });
 
 const submitBtn = document.getElementById('submitBtn');
 
