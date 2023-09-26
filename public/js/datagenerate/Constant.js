@@ -91,4 +91,5 @@ const CONST = {
 }
 
 
-module.exports = CONST;
+// module.exports = CONST;
+export {CONST};

@@ -1,3 +1,5 @@
+import { CONST } from "../datagenerate/Constant.js";
+
 function getSelectedValues() {
     return {
         departurePort: document.getElementById('departurePort').value,
@@ -192,11 +194,11 @@ const dmuSelect = document.getElementById('dmuCount');
 const tableBody1 = document.querySelector('.info-table-deadata tbody');
 const tableBody2 = document.querySelector('.info-table-portdata tbody');
 
-dmuSelect.addEventListener('change', function () {
-    const dmuCount = parseInt(this.value, 10);
-    updateTable1(dmuCount);
-    updateTable2(dmuCount);
-});
+// dmuSelect.addEventListener('change', function () {
+//     const dmuCount = parseInt(this.value, 10);
+//     updateTable1(dmuCount);
+//     updateTable2(dmuCount);
+// });
 
 const submitBtn = document.getElementById('submitBtn');
 
@@ -207,17 +209,17 @@ submitBtn.addEventListener('click', function () {
 });
 
 function updateTable1(dmuCount) {
-    XXXXXX = [
-        1741.72, //총수송량
-        2256.74, // 총수송거리
-        130.57, // 운항시간
-        6.29, // 대기시간
-        1.0, // 연료량
-        31.21, // 작업시간
-        23128.58, // 항만비용
-        4440.3, // 자본비용
-        6.46, // 선원수
-    ] // 임시
+    const orderOfVariable = [
+        CONST.dmuVariableTimes.transportAmount,
+        CONST.dmuVariableTimes.transportDistance,
+        CONST.dmuVariableTimes.voyageTime,
+        CONST.dmuVariableTimes.waitTime,
+        CONST.dmuVariableTimes.fuel,
+        CONST.dmuVariableTimes.workTime,
+        CONST.dmuVariableTimes.portCost,
+        CONST.dmuVariableTimes.capitalCost,
+        CONST.dmuVariableTimes.member,
+    ];
     tableBody1.innerHTML = '';
     for (let i = 0; i < dmuCount; i++) {
         const row = document.createElement('tr');
@@ -226,8 +228,7 @@ function updateTable1(dmuCount) {
         row.appendChild(dmuCell);
         for (let j = 0; j < 9; j++) {
             const cell = document.createElement('td');
-            cell.textContent = (Math.random() * 10 * XXXXXX[j]).toFixed(2); // 임시
-            // cell.textContent = '-'; // 원본
+            cell.textContent = (Math.random() * 10 * orderOfVariable[j]).toFixed(2);
             row.appendChild(cell);
         }
         tableBody1.appendChild(row);
